@@ -1,0 +1,73 @@
+import { animate, hover, scale } from 'motion';
+import {motion} from 'motion/react'
+const Navbar = () => {
+    
+    hover("a",(elem) => {
+        console.log("hover happend",elem)
+        animate(elem,{scale:1.5})
+        return animate(elem,{scale: 1})
+    })
+    
+  return (
+    <nav className="w-screen h-10 p-10 ">
+      <motion.a className="NavLinkAnchorTag flex items-center justify-between nav_link_tag w-fit text-2xl" >
+        <motion.div className="LeftNavLinkBracket block w-fit">[</motion.div>
+        <motion.div className="block w-fit">blog</motion.div>
+        <motion.div className="RighttNavLinkBracket block w-fit">]</motion.div>
+      </motion.a>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+// import { animate, hover, motion } from "motion/react";
+
+// const Navbar = () => {
+//   hover("ul", (element) => {
+//     animate(element, {y:10});
+
+//     return () => animate(element, {y:0});
+//   });
+
+//   return (
+//     <nav className="w-screen h-20 px-10 py-8">
+//       <ul className="text-3xl cursor-pointer flex items-center gap-8">
+//         <a
+//           className="cursor-pointer flex items-center justify-center"
+//           href="/blogs"
+//         >
+//           <motion.span
+//             whileHover={{
+//               //   transition: { duration: 0.2 },
+//             }}
+//             className="block w-fit text-4xl font-bold"
+//             animate={{ opacity: 1 }}
+//             initial={{ opacity: 0 }}
+//             transition={{
+//               duration: 1,
+//             }}
+//           >
+//             [
+//           </motion.span>
+//           <span className="font-semibold"> Blogs </span>
+//           <span className="text-4xl font-bold">]</span>
+//         </a>
+
+//         <a>
+//           <span className="text-4xl font-bold">[</span>
+//           <span className="font-semibold"> Blogs </span>
+//           <span className="text-4xl font-bold">]</span>
+//         </a>
+
+//         <a>
+//           <span className="text-4xl font-bold">[</span>
+//           <span className="font-semibold"> Blogs </span>
+//           <span className="text-4xl font-bold">]</span>
+//         </a>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
