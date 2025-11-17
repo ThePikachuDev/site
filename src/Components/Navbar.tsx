@@ -1,141 +1,63 @@
 import { animate, hover } from "motion";
 import { motion } from "motion/react";
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
 
 const Navbar = () => {
-  const ref = useRef(null);
-  useEffect(() => {
-    return hover(".navTextLink", (element) => {
-      //   animate(".navTextContainer", { gap: 4 });
-      //   animate(".navTextLeftBracket", { scale: 1.3, x: -10 });
+    useEffect(() => {
+        return hover(".navTextLink", (element) => {
+            const exitTransition = {
+                scale: 1,
+                color: "rgb(255, 255, 255)",
+                x: 1,
+            };
 
-      const exitTransition = {
-        scale: 1,
-        color: "white",
-        x: 1,
-      };
+            animate(element.querySelector(".navTextLeftBracket"), {
+                scale: 1.4,
+                x: -7,
+                color: "rgba(220, 220, 220, .71)",
+            });
+            animate(element.querySelector(".navTextRightBracket"), {
+                scale: 1.4,
+                x: 7,
+                color: "rgba(220, 220, 220, .71)",
+            });
+            animate(element.querySelector(".navText"), {
+                color: "rgba(220, 220, 220, .71)",
+            });
 
-      animate(element.querySelector(".navTextLeftBracket"), {
-        scale: 1.3,
-        x: -6,
-      });
-      animate(element.querySelector(".navTextRightBracket"), {
-        scale: 1.3,
-        x: 6,
-      });
-      animate(element.querySelector(".navText"), {
-        color: "rgba(220, 220, 220, 1)",
-      });
+            return () => {
+                animate(
+                    element.querySelector(
+                        ".navTextLeftBracket,.navTextRightBracket,.navText",
+                    ),
+                    exitTransition,
+                );
 
-      return () => {
-        animate(
-          element.querySelector(
-            ".navTextLeftBracket,.navTextRightBracket,.navText"
-          ),
-          exitTransition
-        );
-
-        animate(
-          element.querySelector(
-            ".navTextRightBracket"
-          ),
-          exitTransition
-        );
-        animate(
-          element.querySelector(
-            ".navText"
-          ),
-          exitTransition
-        );
-      };
+                animate(element.querySelector(".navTextRightBracket"), exitTransition);
+                animate(element.querySelector(".navText"), exitTransition);
+            };
+        });
     });
 
-    // return hover(".navTextLink", () => {
-    //   animate(".navTextContainer", { gap: 4 });
-    //   animate(".navTextLeftBracket", { scale: 1.3, x: -10 });
-    //   animate(".navTextRightBracket", { scale: 1.3, x: 10 });
-    //   animate(".navText", { color: "rgba(220, 220, 220, 1)" });
-
-    //   return () =>
-    //     animate(".navTextLeftBracket,.navTextRightBracket,.navText", {
-    //       scale: 1,
-    //       color: "white",
-    //       x: 1,
-    //     });
-    // });
-  });
-
-  return (
-    <nav className="w-screen h-fit py-11 px-12 flex gap-7">
-      <motion.a
-        href="/blog"
-        // ref={ref}
-        className="flex navTextLink items-center justify-between w-fit text-3xl cursor-pointer"
-      >
-        <motion.div
-          animate={{ scale: 1 }}
-          className="navTextContainer flex items-center gap-3"
-        >
-          <motion.div className="block navTextLeftBracket w-fit">[</motion.div>
-          <motion.div className="block navText w-fit">Home</motion.div>
-          <motion.div className="block navTextRightBracket  w-fit">
-            ]
-          </motion.div>
-        </motion.div>
-      </motion.a>
-
-      <motion.a
-        href="/blog"
-        // ref={ref}
-        className="navTextLink flex items-center justify-between w-fit text-3xl cursor-pointer"
-      >
-        <motion.div
-          animate={{ scale: 1 }}
-          className="navTextContainer flex items-center gap-1"
-        >
-          <motion.div className="block navTextLeftBracket w-fit">[</motion.div>
-          <motion.div className="block navText w-fit">Projects</motion.div>
-          <motion.div className="block navTextRightBracket  w-fit">
-            ]
-          </motion.div>
-        </motion.div>
-      </motion.a>
-      
-      
-      <motion.a
-        href="/blog"
-        // ref={ref}
-        className="navTextLink flex items-center justify-between w-fit text-3xl cursor-pointer"
-      >
-        <motion.div
-          animate={{ scale: 1 }}
-          className="navTextContainer flex items-center gap-1"
-        >
-          <motion.div className="block navTextLeftBracket w-fit">[</motion.div>
-          <motion.div className="block navText w-fit">Blogs</motion.div>
-          <motion.div className="block navTextRightBracket  w-fit">
-            ]
-          </motion.div>
-        </motion.div>
-      </motion.a>
-      <motion.a
-        href="/blog"
-        // ref={ref}
-        className="navTextLink flex items-center justify-between w-fit text-3xl cursor-pointer"
-      >
-        <motion.div
-          animate={{ scale: 1 }}
-          className="navTextContainer flex items-center gap-1"
-        >
-          <motion.div className="block navTextLeftBracket w-fit">[</motion.div>
-          <motion.div className="block navText w-fit">About Me</motion.div>
-          <motion.div className="block navTextRightBracket  w-fit">
-            ]
-          </motion.div>
-        </motion.div>
-      </motion.a>
-    </nav>
-  );
+    return (
+        <span className="sm:w-screen sm:flex sm:items-center sm:justify-center">
+            <nav className="w-screen sm:w-fit py-2 px-3 sm:p-5 xl:p-10 flex flex-wrap items-center gap-4 sm:gap-7 xl:gap-20">
+                {["Home", "Blogs", "Projects", "About"].map((item) => (
+                    <motion.a
+                        key={item}
+                        href={"/" + item.toLowerCase()}
+                        className="flex navTextLink items-center justify-between w-fit text-md md:text-2xl xl:text-5xl cursor-pointer"
+                    >
+                        <motion.div className="navTextContainer flex items-center gap-2 sm:gap-3 xl:gap-5">
+                            <motion.div className="navTextLeftBracket w-fit">[</motion.div>
+                            <motion.div className="navText">{item}</motion.div>
+                            <motion.div className="navTextRightBracket  w-fit">]</motion.div>
+                        </motion.div>
+                    </motion.a>
+                ))}
+            </nav>
+        </span>
+    );
 };
 
 export default Navbar;

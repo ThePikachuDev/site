@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+/* .banner-image { */
+/*   animation: banner-move linear forwards; */
+/* } */
+/**/
+/* @keyframes banner-move { */
+/*   from { */
+/*     top: 0; */
+/*   } */
+/*   to { */
+/*     top: 100%; */
+/*   } */
+/* } */
+
+/**/
+/* .banner-image { */
+/*   animation: banner-move linear infinite; */
+/* } */
+/**/
+/* @keyframes banner-move { */
+/*   from { */
+/*       top: 0; */
+/*   } */
+/*   to { */
+/*       top: -100%; */
+/*   } */
+/* } */
