@@ -47,7 +47,7 @@ const Navbar = () => {
                     <motion.a
                         key={item}
                         href={"/" + item.toLowerCase()}
-                        className="flex navTextLink items-center justify-between w-fit text-md md:text-xl xl:text-xl cursor-pointer"
+                        className="flex navTextLink items-center justify-between w-fit text-md md:text-xl xl:text-5xl cursor-pointer"
                     >
                         <motion.div className="navTextContainer flex items-center gap-2 sm:gap-3 xl:gap-5">
                             <motion.div className="navTextLeftBracket w-fit">[</motion.div>
