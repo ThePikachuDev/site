@@ -46,7 +46,7 @@ const SkillsPage = () => {
                                 className="border-white bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer group"
                             >
                                 <div className="border-2 border-white m-1 p-4 sm:p-4">
-                                    <div className="flex flex-col items-center gap-3 sm:gap-4">
+                                    <div className="flex items-center gap-3 sm:gap-4">
                                         <Icon className="text-5xl sm:text-6xl md:text-7xl" />
                                         <div className="text-center">
                                             {/* <span className="text-white group-hover:text-black text-xs sm:text-sm">{'>'}</span> */}
