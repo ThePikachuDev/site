@@ -26,18 +26,18 @@ const SkillsPage = () => {
     ];
 
     return (
-        <main className="min-h-[80vh] w-full bg-black text-white p-4 sm:p-6 lg:p-8">
-            <div className="max-w-7xl mx-auto">
+        <main className="min-h-fit w-full bg-black text-white p-4 sm:p-6 lg:p-8">
+            <div className="lg:max-w-[80%]  mx-auto">
                 <div className="border-white mb-8 sm:mb-12">
                     <div className="border-white m-1">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.3em] sm:tracking-[0.5em] uppercase p-4 sm:p-6 text-center">
+                        <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl tracking-[0.3em] sm:tracking-[0.5em] uppercase p-4 sm:p-6 text-center">
                             [SKILLS]
                         </h1>
                     </div>
                 </div>
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 sm:gap-0">
                     {skills.map((skill, index) => {
                         const Icon = skill.icon;
                         return (
@@ -45,12 +45,12 @@ const SkillsPage = () => {
                                 key={index}
                                 className="border-white bg-black hover:bg-white hover:text-black transition-all duration-300 cursor-pointer group"
                             >
-                                <div className="border-2 border-white m-1 p-4 sm:p-4">
-                                    <div className="flex items-center gap-3 sm:gap-4">
-                                        <Icon className="text-5xl sm:text-6xl md:text-7xl" />
+                                <div className="border-2 border-white m-1 p-1 sm:p-4">
+                                    <div className="flex items-center gap-1 sm:gap-4">
+                                        <Icon className="text-md  sm:text-6xl md:text-7xl" />
                                         <div className="text-center">
                                             {/* <span className="text-white group-hover:text-black text-xs sm:text-sm">{'>'}</span> */}
-                                            <h2 className="inline-block text-xl sm:text-2xl md:text-3xl tracking-[0.2em] sm:tracking-[0.3em] uppercase ml-2">
+                                            <h2 className="inline-block text-xs sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl tracking-[0.2em] sm:tracking-[0.3em] uppercase ml-2">
                                                 {skill.name}
                                             </h2>
                                         </div>

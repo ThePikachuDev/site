@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Commit-Mono";
+  src: url("../public/fonts/CommitMono-siteV143/CommitMono-site-700-Regular.otf");
+}
 
 * {
-  font-family: "Jersey 15", sans-serif;
+  font-family: "Commit-Mono", sans-serif;
   font-weight: 400;
   font-style: normal;
 }

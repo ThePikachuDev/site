@@ -39,7 +39,7 @@ function App() {
     // }, [])
 
     return (
-        <main className="w-screen min-h-screen bg-black text-white">
+        <main className="max-w-screen min-h-screen bg-black text-white">
             {/* <div className="relative h-10 lg:h-30 flex items-start justify-center overflow-hidden"> */}
             {/* <motion.img */}
             {/*     ref={imgRef} */}
