@@ -13,7 +13,7 @@ const ProjectsPage = () => {
     ]
 
     return (
-        <main className="min-h-[80vh] w-screen bg-black text-white p-4 sm:p-6 lg:p-8">
+        <main className="min-h-fit w-screen bg-black text-white p-4 sm:p-6 lg:p-8">
             <div className="lg:max-w-[80%]  mx-auto">
                 <div className="border-white mb-8 sm:mb-12">
                     <div className="border-white m-1">

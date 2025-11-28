@@ -47,10 +47,10 @@ const SkillsPage = () => {
                             >
                                 <div className="border-2 border-white m-1 p-1 sm:p-4">
                                     <div className="flex items-center gap-1 sm:gap-4">
-                                        <Icon className="text-md  sm:text-6xl md:text-7xl" />
+                                        <Icon className="text-md  sm:text-4xl md:text-7xl" />
                                         <div className="text-center">
                                             {/* <span className="text-white group-hover:text-black text-xs sm:text-sm">{'>'}</span> */}
-                                            <h2 className="inline-block text-xs sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl tracking-[0.2em] sm:tracking-[0.3em] uppercase ml-2">
+                                            <h2 className="inline-block text-xs sm:text-md md:text-xl lg:text-3xl xl:text-3xl 2xl:text-4xl tracking-[0.2em] sm:tracking-[0.3em] uppercase ml-2">
                                                 {skill.name}
                                             </h2>
                                         </div>
