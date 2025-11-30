@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Gallery = () => {
@@ -7,7 +7,7 @@ export const Gallery = () => {
 
 
     useEffect(() => {
-        const handleKeyDown = (e) => {
+        const handleKeyDown = () => {
             closeLightbox();
         };
 
@@ -33,7 +33,7 @@ export const Gallery = () => {
         "../../public/gallery/a-red-colored-temple.webp"
     ];
 
-    const openLightbox = (src) => {
+    const openLightbox = (src: any) => {
         setSelectedImage(src);
         setZoomLevel(1);
     };
@@ -55,7 +55,7 @@ export const Gallery = () => {
         setZoomLevel(1);
     };
 
-    const getFileName = (path) => {
+    const getFileName = (path: String) => {
         return path.split('/').pop();
     };
 

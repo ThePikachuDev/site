@@ -3,7 +3,6 @@ import {
     AiFillTwitterCircle,
     AiOutlineDiscord,
 } from "react-icons/ai";
-import { motion } from "motion/react"
 import Tooltip from "./Tooltip";
 import { useEffect, useState } from "react";
 

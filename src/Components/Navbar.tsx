@@ -12,17 +12,17 @@ const Navbar = () => {
                 x: 1,
             };
 
-            animate(element.querySelector(".navTextLeftBracket"), {
+            animate(element.querySelector(".navTextLeftBracket")!, {
                 scale: 1.4,
                 x: -7,
                 color: "rgba(220, 220, 220, .71)",
             });
-            animate(element.querySelector(".navTextRightBracket"), {
+            animate(element.querySelector(".navTextRightBracket")!, {
                 scale: 1.4,
                 x: 7,
                 color: "rgba(220, 220, 220, .71)",
             });
-            animate(element.querySelector(".navText"), {
+            animate(element.querySelector(".navText")!, {
                 color: "rgba(220, 220, 220, .71)",
             });
 
@@ -30,12 +30,12 @@ const Navbar = () => {
                 animate(
                     element.querySelector(
                         ".navTextLeftBracket,.navTextRightBracket,.navText",
-                    ),
+                    )!,
                     exitTransition,
                 );
 
-                animate(element.querySelector(".navTextRightBracket"), exitTransition);
-                animate(element.querySelector(".navText"), exitTransition);
+                animate(element.querySelector(".navTextRightBracket")!, exitTransition);
+                animate(element.querySelector(".navText")!, exitTransition);
             };
         });
     });
