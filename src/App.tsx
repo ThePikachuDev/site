@@ -3,6 +3,7 @@ import HomePage from './Components/HomePage.tsx'
 import SkillsPage from "./Components/SkillsPage.tsx"
 import ProjectsPage from "./Components/ProjectsPage.tsx"
 import { Gallery } from "./Components/Gallery.tsx"
+import Footer from "./Components/Footer.tsx"
 // import { useEffect, useRef, useState } from 'react'
 // import { animate, motion } from "motion/react"
 
@@ -82,6 +83,7 @@ function App() {
             <SkillsPage></SkillsPage>
             <ProjectsPage></ProjectsPage>
             <Gallery></Gallery>
+            <Footer></Footer>
         </main>
     )
 }
