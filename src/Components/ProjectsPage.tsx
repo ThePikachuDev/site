@@ -34,10 +34,10 @@ const ProjectsPage = () => {
                                     className="block my-2 border border-white  bg-black transition-all duration-300 cursor-pointer "
                                 >
                                     <div className="border-white lg:m-1 p-2 lg:p-4 sm:p-4">
-                                        <h1 className="text-sm pb-2 lg:text-xl">
+                                        <h1 className="text-sm pb-2 lg:text-xl xl:text-4xl font-bold">
                                             {">"} {repo.name}
                                         </h1>
-                                        <p className="text-xs lg:text-2xl md:pl-3 text-stone-400">{repo.desc}</p>
+                                        <p className="text-xs lg:text-2xl xl:text-3xl md:pl-3 text-stone-400">{repo.desc}</p>
                                     </div>
                                 </a>
                             </Tooltip>
