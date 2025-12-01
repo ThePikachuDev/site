@@ -3,9 +3,14 @@ import {
     AiFillTwitterCircle,
     AiOutlineDiscord,
 } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
-const Tooltip = ({ tooltip, children }) => {
+type TooltipProps = {
+    tooltip: string;
+    children: ReactNode;
+};
+
+const Tooltip: React.FC<TooltipProps> = ({ tooltip, children }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     return (
@@ -23,6 +28,25 @@ const Tooltip = ({ tooltip, children }) => {
         </span>
     );
 };
+
+// const Tooltip = ({ tooltip, children }) => {
+//     const [isVisible, setIsVisible] = useState(false);
+//
+//     return (
+//         <span
+//             className="relative inline-block"
+//             onMouseEnter={() => setIsVisible(true)}
+//             onMouseLeave={() => setIsVisible(false)}
+//         >
+//             {children}
+//             {isVisible && (
+//                 <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-white text-white text-xs whitespace-nowrap z-10">
+//                     {tooltip}
+//                 </span>
+//             )}
+//         </span>
+//     );
+// };
 
 const HomePage = () => {
     const birthDate = new Date("2007-08-23T00:00:00");

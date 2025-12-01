@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type SetStateAction } from 'react';
 
 export const Gallery = () => {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState("");
     const [zoomLevel, setZoomLevel] = useState(1);
     const [dragPosition, setDragPosition] = useState({ x: 0, y: 0 });
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handleKeyDown = (e) => {
+        const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
@@ -35,14 +35,14 @@ export const Gallery = () => {
         "gallery/a-red-colored-temple.webp"
     ];
 
-    const openLightbox = (src) => {
+    const openLightbox = (src: SetStateAction<string>) => {
         setSelectedImage(src);
         setZoomLevel(1);
         setDragPosition({ x: 0, y: 0 });
     };
 
     const closeLightbox = () => {
-        setSelectedImage(null);
+        setSelectedImage("");
         setZoomLevel(1);
         setDragPosition({ x: 0, y: 0 });
     };
@@ -60,11 +60,11 @@ export const Gallery = () => {
         setDragPosition({ x: 0, y: 0 });
     };
 
-    const getFileName = (path) => {
+    const getFileName = (path: String) => {
         return path.split('/').pop();
     };
 
-    const handleMouseDown = (e) => {
+    const handleMouseDown = (e: any) => {
         if (zoomLevel > 1) {
             setIsDragging(true);
             setDragStart({
@@ -74,7 +74,7 @@ export const Gallery = () => {
         }
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: any) => {
         if (isDragging && zoomLevel > 1) {
             setDragPosition({
                 x: e.clientX - dragStart.x,
