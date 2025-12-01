@@ -26,7 +26,7 @@ const ProjectsPage = () => {
                 <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 p-4">
                     {projects.map((repo, index: number) => {
                         return (
-                            <Tooltip tooltip={repo.tooltip}>
+                            <Tooltip key={index} tooltip={repo.tooltip}>
                                 <a
                                     key={index}
                                     target="_blank" rel="noopener noreferrer"
